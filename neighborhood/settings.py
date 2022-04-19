@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'neighborhood.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = os.environ.get('DEBUG', True)
 # development
 if config('MODE')=="dev":
    DATABASES = {
