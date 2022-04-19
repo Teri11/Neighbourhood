@@ -37,7 +37,7 @@ def signup_view(request):
       user.profile.last_name = form.cleaned_data.get('last_name')
       user.profile.email = form.cleaned_data.get('email')
       # user can't login until link confirmed
-      user.is_active = False
+      user.is_active = True
       user.save()
       current_site = get_current_site(request)
       subject = 'Please Activate Your Account'
@@ -52,8 +52,8 @@ def signup_view(request):
       })
       to_email = form.cleaned_data.get('email')
       email = EmailMessage(subject, message, to=[to_email])
-      email.send()
-      return redirect('activation_sent')
+      # email.send()
+      return redirect('login')
   else:
     form = SignUpForm()
   return render(request, 'registration/signup.html', {'form': form})
