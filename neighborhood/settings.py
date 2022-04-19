@@ -29,6 +29,9 @@ cloudinary.config(
   api_secret = "r7g8geNK0YYQiZRlTeL2gBmjQNU" 
 )
 
+
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
